@@ -29,7 +29,12 @@ namespace SociosWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> TodosSocios()
         {
-            return Ok(await _socioRepositorio.TodosSocios());
+            var socioq = await _socioRepositorio.TodosSocios();
+            foreach(var elemento in socioq)
+            {
+                elemento.ImageSrc = String.Format("{0}://{1}{2}/Images/{3}", Request.Scheme, Request.Host, Request.PathBase, elemento.foto);
+            }
+            return Ok(socioq);
         }
         [HttpGet("{nrosocio}")]
         public async Task<IActionResult> VerSocio(int nrosocio)
@@ -38,9 +43,6 @@ namespace SociosWeb.Controllers
             socioq.ImageSrc = String.Format("{0}://{1}{2}/Images/{3}",Request.Scheme,Request.Host,Request.PathBase,socioq.foto);
             return Ok(socioq);
             
-
-
-
         }
         [HttpPost]
         public async Task<IActionResult> InsertarSocio([FromForm] Socio socio)

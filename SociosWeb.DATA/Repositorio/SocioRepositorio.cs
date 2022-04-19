@@ -32,9 +32,6 @@ namespace SociosWeb.DATA.Repositorio
             var sql = @"
                         SELECT nombre, apellido, nrosocio, direccion, telefono, dni, foto
                         FROM public.""Socios""";
-
-
-
             return await db.QueryAsync<Socio>(sql, new { });
         }
 

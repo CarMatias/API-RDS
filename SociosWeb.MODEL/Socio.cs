@@ -9,7 +9,7 @@ namespace SociosWeb.MODEL
         public string apellido { get; set; }
         public int nrosocio { get; set; }
         public string direccion { get; set; }
-        public long telefono { get; set; }
+        public long telefono { get; set; }  
         public int dni { get; set; }
         public string foto { get; set; }
 

@@ -29,4 +29,6 @@
     <Folder Include="Images\" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://schemas.wp.org/trunk/theme.json" /></VisualStudio></ProjectExtensions>
+
 </Project>
